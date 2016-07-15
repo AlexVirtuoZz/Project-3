@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="beers.xsd">
+    <beer id="1">
+        <name>Budweiser</name>
+        <type>dark</type>
+        <alc>true</alc>
+        <manufacturer>Anheuser</manufacturer>
+        <ingredients>
+            <ingredient>water</ingredient>
+            <ingredient>malts</ingredient>
+            <ingredient>sugar</ingredient>
+            <ingredient>hop</ingredient>
+        </ingredients>
+        <chars>
+            <alc-by-volume>5</alc-by-volume>
+            <transparency>75</transparency>
+            <filtered>true</filtered>
+            <calories>44</calories>
+            <container>bottle</container>
+        </chars>
+    </beer>
+    <beer id="2">
+        <name>Obolon 0</name>
+        <type>light</type>
+        <alc>false</alc>
+        <manufacturer>Obolon</manufacturer>
+        <ingredients>
+            <ingredient>filtered water</ingredient>
+            <ingredient>malts</ingredient>
+            <ingredient>sugar substitude</ingredient>
+            <ingredient>hop</ingredient>
+        </ingredients>
+        <chars>
+            <alc-by-volume>0</alc-by-volume>
+            <transparency>85</transparency>
+            <filtered>true</filtered>
+            <calories>41</calories>
+            <container>can</container>
+        </chars>
+    </beer>
+</beers>

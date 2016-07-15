@@ -1,0 +1,66 @@
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="beers">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="beer" maxOccurs="unbounded" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="[A-Z]{1}[a-z\d]*[\s\\.\\,\\-\\_]?[a-z\d]*"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="type">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="light"/>
+                                    <xs:enumeration value="dark"/>
+                                    <xs:enumeration value="lager"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                            </xs:element>
+                            <xs:element type="xs:boolean" name="alc"/>
+                            <xs:element type="xs:string" name="manufacturer"/>
+                            <xs:element name="ingredients">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="ingredient" maxOccurs="unbounded" minOccurs="2"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="chars">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:byte" name="alc-by-volume"/>
+                                        <xs:element type="xs:byte" name="transparency"/>
+                                        <xs:element type="xs:boolean" name="filtered"/>
+                                        <xs:element name="calories">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:byte">
+                                                    <xs:maxInclusive value="100"/>
+                                                    <xs:minExclusive value="1"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element >
+                                        <xs:element name="container">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="can"/>
+                                                    <xs:enumeration value="bottle"/>
+                                                    <xs:enumeration value="barrel"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:byte" name="id" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
